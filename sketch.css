@@ -1,33 +1,42 @@
-body {
-	background-color: gray;
-}
-
 .buttons {
-	width: 250px;
-	margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 120px;
+    height: 35px;
+    border: 2px solid #085200;
+    border-radius: 7px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: #085200; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#448A3D, #085200); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#448A3D, #085200); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#448A3D, #085200); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#448A3D, #085200);
 }
 
-.container {
-	background-color: #dedede;
-	width: 350px;
-	margin: auto;
-	border-radius: 10px;
-	box-shadow: 10px 10px 3px #8c8c8c;
+.buttons:hover {
+    background: #074a00;
+}
+
+#resetbutton {
+    margin-right: 50px;
+}
+
+#clear {
+    margin-left: 50px;
 }
 
 .grid {
 	width: 25px;
 	height: 25px;
-	float: left;
 	display: inline-block;
 	color: #fff;
+    margin-top: -5px;
 }
 
-button {
-	width: 100px;
-	font-family: sans-serif;
-	letter-spacing: 3px;
-	font-weight: bold;
-	margin-left: 30px;
-	margin-bottom: 50px;
+.container {
+    
 }
+
