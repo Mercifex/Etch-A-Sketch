@@ -1,35 +1,56 @@
-$(document).ready(function() {
-	for (var i = 0; i < 17; i++) {
-		$(".row").append("<div class='grid'></div>");
-		i++;
-	}
-});
+var gridSize = 16;
+
+function createCanvas() {
+    for (var i = 0; i < gridSize * gridSize; i++) {
+        $(".canvas").append("<tr class='grid'></tr>");
+    }
+    
+    $(".grid").css( {
+       'height' : $(".canvas").height() / gridSize,
+       'width' : $(".canvas").height() / gridSize,
+    });
+    
+    $("#currentSetting").replaceWith("<p id='currentSetting'>Current Setting: " + gridSize + "</p>");
+}
+
+function newCanvas() {
+    $(".canvas").empty();
+    var newSize = prompt("New size?");
+    for (var i = 0; i < newSize * newSize; i++) {
+        $(".canvas").append("<tr class='grid'></tr>");
+    }
+    
+    $(".grid").css( {
+       'height' : $(".canvas").height() / newSize,
+       'width' : $(".canvas").height() / newSize,
+    });
+    
+    marker();
+    
+    $("#currentSetting").replaceWith("<p id='currentSetting'>Current Setting: " + gridSize + "</p>");
+
+}
+
+function marker() {
+    $(".grid").hover(function() {
+       $(this).css("background-color", "gray");
+       }, function(){
+       $(this).css("background-color", "black");
+    });
+}
+
 
 $(document).ready(function() {
-		$(".grid").hover(function() {
-		$(this).css("background-color", "gray");
-		}, function(){
-		$(this).css("background-color", "black");
+    createCanvas();
+    marker();
+    $("#clear").click(function() {
+		$(".grid").css("background-color", "#dedede");
 	});
-
+    $("#resetbutton").click(newCanvas);
 });
 
 
 
-$(document).ready(function() {
-	$("#resetbutton").click(function() {
-		$(".grid").css("background-color", "#dedede");
-		var newSize = prompt("How many squares per side would you like the new grid? (Enter 1 number between 1-100)");
-	})
-});
-
-
-
-$(document).ready(function() {
-	$("#clear").click(function() {
-		$(".grid").css("background-color", "#dedede");
-	})
-});
 
 
 
